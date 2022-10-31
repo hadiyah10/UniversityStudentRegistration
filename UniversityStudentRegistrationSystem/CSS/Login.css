@@ -1,0 +1,66 @@
+﻿body, html {
+    height: 100%;
+    color: white;
+}
+
+h2 {
+    text-align: center;
+}
+
+
+form {
+    box-sizing: border-box;
+}
+
+.background {
+    height: 100%;
+    /*background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20201101/pngtree-scene-with-geometrical-forms-the-poster-model-minimal-background-render-image_452981.jpg"); */
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_CZXC_rz2krVrxlC0lrTdISiuWUYDgswyH0AWaatQUnuICYI-26nEU4raOqZtiYxmU-I&usqp=CAU");
+    /*min-height: 380px; */
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(6px);
+}
+
+.container1 {
+    position: absolute;
+    border-radius: 20px 0px 20px 0px;
+    border: 2px solid white;
+    padding: 3%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    background-color: rgba(0,0,0,.5);
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    /* color: white; */
+}
+
+#email, #password {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid white;
+    border-radius: 20px 0px 20px 0px;
+    margin-top: 2%;
+}
+
+#submit, #register {
+    background-color: green;
+    color: white;
+    padding: 12px 20px;
+    border: 1px solid white;
+    border-radius: 50px;
+    width: 50%;
+    margin-top: 2%;
+    transform: translate(50%, 0%);
+}
+
+#password {
+    margin-bottom: 5%;
+}

@@ -1,0 +1,208 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <script type="text/javascript" src="~/Scripts/AddResultDetails.js"></script>
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        h2 {
+            text-align: center;
+            color: white;
+        }
+
+        .container {
+            position: absolute;
+            border-radius: 50px;
+            border: 2px solid white;
+            padding: 0 20px 0 20px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40%;
+            background-color: rgba(0,0,0,.5);
+            height: 80%;
+        }
+
+        .background {
+            height: 100%;
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_CZXC_rz2krVrxlC0lrTdISiuWUYDgswyH0AWaatQUnuICYI-26nEU4raOqZtiYxmU-I&usqp=CAU");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: blur(6px);
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+            font-size: 100%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: white;
+        }
+
+
+        input[type=text], select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        #next {
+            background-color: green;
+            padding: 12px 20px;
+            border: 1px solid white;
+            border-radius: 50px;
+            width: 25%;
+            margin-top: 2%;
+            color: white;
+            float: right;
+        }
+
+        .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 15px;
+        }
+
+        .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 20px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background"></div>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form>
+            <div>
+                <fieldset>
+                    <legend id="title" class="desc">
+                        <label for="result">Result Details</label>
+                    </legend>
+                    <div>
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="subject1">Subject 1: </label>
+                            </div>
+
+                            <div class="col-75">
+                                <select class="subjectDetails1" >
+                                    
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="grade 1">Grade: </label>
+                            </div>
+
+                            <div class="col-75">
+                                <select class="gradeDetails1" >
+                                    <option value="1">A</option>
+                                    <option value="2">B</option>
+                                    <option value="3">C</option>
+                                    <option value="4">D</option>
+                                    <option value="5">E</option>
+                                    <option value="6">F</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="subject2">Subject 2: </label>
+                            </div>
+
+                            <div class="col-75">
+                                <select class="subjectDetails2" >
+                                    
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="grade 2">Grade: </label>
+                            </div>
+
+                            <div class="col-75">
+                                <select class="gradeDetails2">
+                                    <option value="1">A</option>
+                                    <option value="2">B</option>
+                                    <option value="3">C</option>
+                                    <option value="4">D</option>
+                                    <option value="5">E</option>
+                                    <option value="6">F</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="subject3">Subject 3: </label>
+                            </div>
+
+                            <div class="col-75">
+                                <select class="subjectDetails3" >
+                                   
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="grade 3">Grade: </label>
+                            </div>
+
+                            <div class="col-75">
+                                <select class="gradeDetails3">
+                                    <option value="1">A</option>
+                                    <option value="2">B</option>
+                                    <option value="3">C</option>
+                                    <option value="4">D</option>
+                                    <option value="5">E</option>
+                                    <option value="6">F</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <input type="button" id="next" value="Next">
+
+        </form>
+    </div>
+
+</body>
+</html>

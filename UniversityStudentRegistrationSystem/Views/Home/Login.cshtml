@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        body, html {
+            height: 100%;
+            color: white;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .background {
+            height: 100%;
+            /*background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20201101/pngtree-scene-with-geometrical-forms-the-poster-model-minimal-background-render-image_452981.jpg"); */
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_CZXC_rz2krVrxlC0lrTdISiuWUYDgswyH0AWaatQUnuICYI-26nEU4raOqZtiYxmU-I&usqp=CAU");
+            /*min-height: 380px; */
+
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .container {
+            position: absolute;
+            border-radius: 20px 0px 20px 0px;
+            border: 2px solid white;
+            padding: 20px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 45%;
+            background-color: rgb(0,0,0,0.5);
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+            /* color: white; */
+        }
+
+        input[type=text] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid white;
+            border-radius: 20px 0px 20px 0px;
+        }
+
+        input[type=submit] {
+            background-color: red;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 50px;
+            width: 100%;
+        }
+
+        #password {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="background"></div>
+    <div class="container">
+        <h1>LOGIN FORM</h1>
+        <form>
+            <div>
+                <label for="name">YOUR NAME: </label>
+                <input type="text" id="name">
+            </div>
+
+            <div>
+                <label for="email">YOUR EMAIL: </label>
+                <input type="text" id="email">
+            </div>
+
+
+            <div>
+                <label for="password">YOUR PASSWORD: </label>
+                <input type="text" id="password">
+            </div>
+
+            <input type="submit" value="SIGN IN">
+
+        </form>
+    </div>
+</body>
+</html>

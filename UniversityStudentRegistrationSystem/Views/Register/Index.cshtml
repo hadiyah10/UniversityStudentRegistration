@@ -1,0 +1,145 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <link rel="stylesheet" type="text/css" href="~/CSS/Registration.css">
+    <script type="text/javascript" src="~/Scripts/Register.js"></script>
+    <title>Registration form</title>
+</head>
+
+<body>
+
+    <div class="background"></div>
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form>
+            <div>
+                <fieldset id="fieldset">
+                    <legend id="title" class="desc">
+                        <label for="demographic">Demographic details</label>
+                    </legend>
+                    <div>
+
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="name">Name: </label>
+                            </div>
+                            <div class="col-75">
+                                <input required type="text" id="name" placeholder="Enter name..">
+                                <span class="asterisk_input">  </span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="surname">Surname: </label>
+                            </div>
+
+                            <div class="col-75">
+                                <input required type="text" id="surname" placeholder="Enter surname..">
+                                <span class="asterisk_input">  </span>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="address">Address: </label>
+                            </div>
+
+                            <div class="col-75">
+                                <input required type="text" id="address" placeholder="Enter address..">
+                                <span class="asterisk_input">  </span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="phone">Phone Number: </label>
+                            </div>
+
+                            <div class="col-75">
+                                <input type="text" id="phone" placeholder="Enter phone number..">
+                                <span class="asterisk_input">  </span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="guardian">Guardian Name: </label>
+                            </div>
+
+                            <div class="col-75">
+                                <input type="text" id="guardian" placeholder="Enter guardian name..">
+                                <span class="asterisk_input">  </span>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="email">Email Address: </label>
+
+                            </div>
+
+                            <div class="col-75">
+                                <input type="email" id="email" placeholder="Enter email addres..">
+                                <span class="asterisk_input">  </span>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="password">Password: </label>
+                            </div>
+
+                            <div class="col-75">
+                                <input type="password" id="password" placeholder="Enter password..">
+                                <span class="asterisk_input">  </span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="NID">National Identity Card: </label>
+                            </div>
+
+                            <div class="col-75">
+                                <input type="text" id="NID" placeholder="Enter NID..">
+                                <span class="asterisk_input">  </span>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="date">Date of birth: <span class="required">*</span></label>
+                            </div>
+
+                            <div class="col-75">
+                                <input type="date" id="date" name="trip-start"
+                                       value=getDate()
+                                       min="2000-01-01" max=getDate()>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <input type="button" id="registerStudent" value="Register" onclick="register()">
+
+        </form>
+    </div>
+
+</body>
+</html>

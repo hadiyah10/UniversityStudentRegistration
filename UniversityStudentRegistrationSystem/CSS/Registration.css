@@ -1,0 +1,98 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 0;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    /*https://png.pngtree.com/thumb_back/fh260/background/20201101/pngtree-scene-with-geometrical-forms-the-poster-model-minimal-background-render-image_452981.jpg */
+}
+
+.background {
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_CZXC_rz2krVrxlC0lrTdISiuWUYDgswyH0AWaatQUnuICYI-26nEU4raOqZtiYxmU-I&usqp=CAU");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(6px);
+}
+
+.container {
+    position: absolute;
+    border-radius: 50px;
+    border: 2px solid white;
+    padding: 0 20px 0 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    background-color: rgba(0,0,0,.5);
+    height: 98%;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    font-size: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white; 
+    font-weight:bold;
+}
+
+
+input[type=text], select, textarea, #password, #email {
+    width: 100%;
+    padding: 2%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+#registerStudent {
+    background-color: green;
+    padding: 2px;
+    border: 2px solid white;
+    border-radius: 50px;
+    width: 25%;
+    color: white;
+    float: right;
+    margin-top: 1%;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 15px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.required {
+    color: red;
+}
+.asterisk_input::after {
+    content: " *";
+    color: #e32;
+    position: absolute;
+    margin: 0px 0px 0px -20px;
+    font-size: xx-large;
+    padding: 0 5px 0 0;
+}
