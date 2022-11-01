@@ -22,14 +22,13 @@
 
     $("#next").click(function () { 
         var resultList = [];
-        for (var y = 1; y < 4; y++) { 
-            var subjectValue = $('.subjectDetails'+y + ' :selected').val(); 
+        for (var y = 1; y < 4; y++) {
+            var subjectValue = parseInt($('.subjectDetails' + y + ' :selected').val()); 
             var gradeValue = $('.gradeDetails'+y + ' :selected').val(); 
-            const result = { SubjectId: subjectValue, Grade: gradeValue, StudentId : null};
+            const result = { SubjectId: subjectValue, Grade: gradeValue };
             resultList.push(result);
         }
-
-        CreateResult(resultList).then((response) => {
+        CreateResult({ results: resultList }).then((response) => {
             if (response.result) {
                toastr.success('Result Created Successfully')
             }
@@ -51,8 +50,8 @@ function CreateResult(resultList) {
         $.ajax({
             type: "POST",
             url: "/Register/CreateResult",
-            data: JSON.stringify(resultList),
-            dataType: 'application/json',
+            data: resultList,
+            dataType: 'json',
             success: function (data) {
                 resolve(data)
             },

@@ -20,19 +20,36 @@ namespace RepositoryClassLibrary.DataAccessLayer
         {
             this.DatabaseHelper = new DatabaseHelper();
         }
-        public bool IsResultCreated(List<Results> resultList)
+/*        public bool isresultcreated(list<results> resultlist)
+        {
+            bool isresultcreated = false;
+
+            list<sqlparameter> parameters = new list<sqlparameter>();
+
+            foreach (var result in resultlist)
+            {
+                parameters.add(new sqlparameter("@subjectid", result.subjectid));
+                parameters.add(new sqlparameter("@grade", result.grade));
+                parameters.add(new sqlparameter("@studentid",))
+                isresultcreated = databasehelper.insertupdatedata(createresultquery, parameters);
+            }
+            return isresultcreated;
+
+        }*/
+
+        public bool IsResultCreated(List<Results> resultList, int userId)
         {
             bool isResultCreated = false;
 
-            List<SqlParameter> parameters = new List<SqlParameter>();
-       
             foreach (var result in resultList)
             {
-                parameters.Add(new SqlParameter("@SubjectId", result.SubjectId));
+                List<SqlParameter> parameters = new List<SqlParameter>();
+                parameters.Add(new SqlParameter("@SubjectId",result.SubjectId ));
                 parameters.Add(new SqlParameter("@Grade", result.Grade));
-                parameters.Add(new SqlParameter("@StudentId", result.StudentId));
+                parameters.Add(new SqlParameter("@StudentId", userId));
                 isResultCreated = DatabaseHelper.InsertUpdateData(CreateResultQuery, parameters);
             }
+
             return isResultCreated;
 
         }

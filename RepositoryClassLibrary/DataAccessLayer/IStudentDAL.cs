@@ -12,6 +12,7 @@ namespace RepositoryClassLibrary.DataAccessLayer
         bool CreateStudent(Students student);
         Results GetStudentResultsByUserId(int id);
         List<Students> GetAllStudents();
+        Students GetStudent(string email);
         void UpdateStatus(Students student, int Status);  
         List<Students> GetTopFifteenStudents();
      

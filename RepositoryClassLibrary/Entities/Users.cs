@@ -7,7 +7,7 @@ namespace RepositoryClassLibrary.Entities
 {
     public class Users
     {
-        public int UserId { get; private set; } 
+        public int UserId { get; set; } 
         public string Email  { get; set; }
         public string Password { get;set; }
         public Roles Role { get; set; }

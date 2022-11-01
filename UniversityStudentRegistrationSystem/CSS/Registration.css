@@ -16,8 +16,8 @@ html, body {
 }
 
 .background {
-    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_CZXC_rz2krVrxlC0lrTdISiuWUYDgswyH0AWaatQUnuICYI-26nEU4raOqZtiYxmU-I&usqp=CAU");
     height: 100%;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_CZXC_rz2krVrxlC0lrTdISiuWUYDgswyH0AWaatQUnuICYI-26nEU4raOqZtiYxmU-I&usqp=CAU");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

@@ -7,42 +7,47 @@ using System.Linq;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
+using UniversityStudentRegistrationSystem.Models;
 
 namespace Student_Registration.Controllers
 {
     public class RegisterController : Controller
     {
-        private IStudentBL _studentBL;
-        private ISubjectBL _subjectBL;
+        private IStudentBL StudentBL;
+        private ISubjectBL SubjectBL;
         private IResultBL ResultBL;
 
+
         public RegisterController() { }
-       public RegisterController(IStudentBL student , ISubjectBL subject, IResultBL resultBL)
+        public RegisterController(IStudentBL student, ISubjectBL subject, IResultBL resultBL)
         {
-            _studentBL = student;
-            _subjectBL = subject;
+            StudentBL = student;
+            SubjectBL = subject;
             ResultBL = resultBL;
         }
 
         public ActionResult Index()
         {
-            return View(); 
+            return View();
         }
 
 
         [HttpPost]
-       public JsonResult CreateStudent(Students Student)
+        public JsonResult CreateStudent(Students Student)
         {
-            var response = this._studentBL.CreateStudent(Student);
+            var response = this.StudentBL.CreateStudent(Student);
             return Json(new { result = response });
 
         }
         public ActionResult ResultDetails()
         {
-            if (this.Session["user"] != null)
+            int? userId = this.Session.GetUserId();
+
+            if (userId != null)
             {
                 //verify if user has results
-                if(this._studentBL.GetStudentResultsByUserId((int)this.Session["user"]) == null) {
+                if (this.StudentBL.GetStudentResultsByUserId(userId.Value) == null)
+                {
                     //redirect to input results
                     return View();
                 }
@@ -52,7 +57,7 @@ namespace Student_Registration.Controllers
                     return View();
 
                 }
-               
+
             }
             else
             {
@@ -64,17 +69,17 @@ namespace Student_Registration.Controllers
         [HttpGet]
         public JsonResult GetSubjects()
         {
-            var response = this._subjectBL.GetSubjects();
+            var response = this.SubjectBL.GetSubjects();
+
             return Json(new { result = response }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
-        public JsonResult CreateResult(Results[] resultList)
+        public JsonResult CreateResult(ResultModel resultModel)
         {
+            var response = this.ResultBL.IsResultCreated(resultModel.Results);
 
-            var response = this.ResultBL.IsResultCreated(resultList.ToList());
             return Json(new { result = response });
-
         }
     }
 }

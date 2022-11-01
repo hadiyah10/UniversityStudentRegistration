@@ -9,6 +9,6 @@ namespace RepositoryClassLibrary.DataAccessLayer
 {
     public interface IResultDAL
     {
-        bool IsResultCreated(List<Results> resultList);  
+        bool IsResultCreated(List<Results> listOfResults, int userId);  
     }
 }

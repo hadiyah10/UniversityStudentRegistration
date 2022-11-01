@@ -1,11 +1,11 @@
-﻿$(function () {
+﻿/// <reference path="bootstrap.js" />
+$(function () {
     let form = document.querySelector('form');
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         return false;
     });
 });
-
 
 function register() {
     var name = $("#name").val(); 
@@ -18,6 +18,7 @@ function register() {
     var NID = $("#NID").val();  
     var date = $("#date").val();
 
+   /*
     var regEx = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/; 
    
     var errorMessages = [];
@@ -81,6 +82,7 @@ function register() {
     if (date.length == 0) {
         errorMessages.push("You must enter your date of birth.");
     }
+    */ 
 
     // create object to map LoginModel
     var studentObj = {
@@ -104,12 +106,12 @@ function register() {
             .catch((error) => {
                 toastr.error('Unable to make request!!');
             });
-    } else {
+    } /*else {
         for (var i = 0; i < errorMessages.length; i++) {
             toastr.error(errorMessages[i]);
         }
         
-    }
+    }*/
     
 }
 

@@ -10,6 +10,6 @@ namespace RepositoryClassLibrary.Entities
         public int ResultId { get; private set; }
         public int SubjectId { get; set; } 
         public char Grade { get; set; }
-        public int StudentId { get; set; }
+       // public int StudentId { get; set; }
     }
 }

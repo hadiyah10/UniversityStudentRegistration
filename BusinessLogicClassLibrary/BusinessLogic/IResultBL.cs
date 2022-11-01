@@ -8,6 +8,6 @@ using System.Threading.Tasks;
 namespace BusinessLogicClassLibrary.BusinessLogic { 
     public interface IResultBL
     {
-        bool IsResultCreated(List<Results> resultList);
+        bool IsResultCreated(List<Results> results);
     }
 }

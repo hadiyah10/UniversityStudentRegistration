@@ -15,92 +15,76 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     <script type="text/javascript" src="~/Scripts/AddResultDetails.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/CSS/ResultDetails.css?v=1">
+
     <style>
-
-        * {
-            box-sizing: border-box;
-        }
-
-        h2 {
-            text-align: center;
-            color: white;
-        }
-
-        .container {
-            position: absolute;
-            border-radius: 50px;
-            border: 2px solid white;
-            padding: 0 20px 0 20px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 40%;
-            background-color: rgba(0,0,0,.5);
-            height: 80%;
-        }
-
         .background {
+            position: absolute;
             height: 100%;
+            width:100%;
             background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_CZXC_rz2krVrxlC0lrTdISiuWUYDgswyH0AWaatQUnuICYI-26nEU4raOqZtiYxmU-I&usqp=CAU");
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
             filter: blur(6px);
+            z-index: -1;
         }
 
-        label {
-            padding: 12px 12px 12px 0;
-            display: inline-block;
-            font-size: 100%;
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        .center {
+            text-align: center;
+            position: fixed;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a, #logout {
+            display: block;
             color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            background-color: transparent;
         }
 
-
-        input[type=text], select, textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            resize: vertical;
-        }
-
-        #next {
+        li a:hover:not(.active), #logout:hover:not(.active) {
             background-color: green;
-            padding: 12px 20px;
-            border: 1px solid white;
-            border-radius: 50px;
-            width: 25%;
-            margin-top: 2%;
-            color: white;
+        }
+
+        .active {
+            background-color: #04AA6D;
+        }
+
+        #logout {
             float: right;
-        }
-
-        .col-25 {
-            float: left;
-            width: 25%;
-            margin-top: 15px;
-        }
-
-        .col-75 {
-            float: left;
-            width: 75%;
-            margin-top: 20px;
-        }
-
-        /* Clear floats after the columns */
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
         }
     </style>
 </head>
-<body>
 
+<body>
     <div class="background"></div>
+    <div class="container1">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#home">Faculties</a></li>
+            <li><a href="#home">Vacancies</a></li>
+            <li><a href="/Register/ResultDetails">View results</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><button id="logout" onclick="window.location = '@Url.Action("Login", "Login")'">Log Out</button></li>
+        </ul>
+    </div>
+
     <div class="container">
-        <h2>Registration Form</h2>
+        <h2>Result Details</h2>
         <form>
             <div>
                 <fieldset>
@@ -114,8 +98,7 @@
                             </div>
 
                             <div class="col-75">
-                                <select class="subjectDetails1" >
-                                    
+                                <select class="subjectDetails1">
                                 </select>
                             </div>
                         </div>
@@ -126,7 +109,7 @@
                             </div>
 
                             <div class="col-75">
-                                <select class="gradeDetails1" >
+                                <select class="gradeDetails1">
                                     <option value="1">A</option>
                                     <option value="2">B</option>
                                     <option value="3">C</option>
@@ -143,8 +126,7 @@
                             </div>
 
                             <div class="col-75">
-                                <select class="subjectDetails2" >
-                                    
+                                <select class="subjectDetails2">
                                 </select>
                             </div>
                         </div>
@@ -174,8 +156,7 @@
                             </div>
 
                             <div class="col-75">
-                                <select class="subjectDetails3" >
-                                   
+                                <select class="subjectDetails3">
                                 </select>
                             </div>
                         </div>
@@ -199,10 +180,9 @@
                     </div>
                 </fieldset>
             </div>
-            <input type="button" id="next" value="Next">
 
+            <input type="button" id="next" value="Submit">
         </form>
     </div>
-
 </body>
 </html>

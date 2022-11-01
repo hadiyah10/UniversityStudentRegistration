@@ -61,6 +61,7 @@
     <Compile Include="Helper\DatabaseHelper.cs" />
     <Compile Include="Helper\SqlDatabaseService.cs" />
     <Compile Include="Model\LoginModel.cs" />
+    <Compile Include="SQLQueries\SqlQueries.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next">

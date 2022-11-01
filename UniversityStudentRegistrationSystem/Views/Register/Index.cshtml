@@ -15,11 +15,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     <link rel="stylesheet" type="text/css" href="~/CSS/Registration.css">
     <script type="text/javascript" src="~/Scripts/Register.js"></script>
+    <script type="text/javascript" src="~/Scripts/DataValidations.js"></script>
     <title>Registration form</title>
+
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
-
     <div class="background"></div>
     <div class="container">
         <h2>Registration Form</h2>
@@ -33,92 +39,91 @@
 
                         <div class="row">
                             <div class="col-25">
-                                <label for="name">Name: </label>
+                                <label for="name">Name: <span class="required">*</span></label>
                             </div>
                             <div class="col-75">
-                                <input required type="text" id="name" placeholder="Enter name..">
-                                <span class="asterisk_input">  </span>
+                                <input required type="text" id="name" placeholder="Enter name.." onchange="FnameValidation(this)";>
+                                <span class="error" id="fnameErr"></span>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-25">
-                                <label for="surname">Surname: </label>
+                                <label for="surname">Surname: <span class="required">*</span></label>
                             </div>
 
                             <div class="col-75">
-                                <input required type="text" id="surname" placeholder="Enter surname..">
-                                <span class="asterisk_input">  </span>
-                            </div>
-                        </div>
-
-
-                        <div class="row">
-                            <div class="col-25">
-                                <label for="address">Address: </label>
-                            </div>
-
-                            <div class="col-75">
-                                <input required type="text" id="address" placeholder="Enter address..">
-                                <span class="asterisk_input">  </span>
+                                <input required type="text" id="surname" placeholder="Enter surname.." onchange="SnameValidation(this)";>
+                                <span class="error" id="snameErr">  </span>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-25">
-                                <label for="phone">Phone Number: </label>
+                                <label for="address">Address: <span class="required">*</span></label>
                             </div>
 
                             <div class="col-75">
-                                <input type="text" id="phone" placeholder="Enter phone number..">
-                                <span class="asterisk_input">  </span>
+                                <input required type="text" id="address" placeholder="Enter address.." onchange="AddressValidation(this)";>
+                                <span class="error" id="AddressErr"></span>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-25">
-                                <label for="guardian">Guardian Name: </label>
+                                <label for="phone">Phone Number: <span class="required">*</span></label>
                             </div>
 
                             <div class="col-75">
-                                <input type="text" id="guardian" placeholder="Enter guardian name..">
-                                <span class="asterisk_input">  </span>
+                                <input type="text" id="phone" placeholder="Enter phone number.." onchange="PhoneValidation(this)";>
+                                <span class="error" id="PhoneErr"></span>
                             </div>
                         </div>
 
-
                         <div class="row">
                             <div class="col-25">
-                                <label for="email">Email Address: </label>
-
+                                <label for="guardian">Guardian Name:<span class="required">*</span></label>
                             </div>
 
                             <div class="col-75">
-                                <input type="email" id="email" placeholder="Enter email addres..">
-                                <span class="asterisk_input">  </span>
+                                <input type="text" id="guardian" placeholder="Enter guardian name.." name="guardian"  onchange="NameValidation(this)";>
+                                <span class="error" id="nameErr">  </span>
                             </div>
                         </div>
 
 
                         <div class="row">
                             <div class="col-25">
-                                <label for="password">Password: </label>
+                                <label for="email">Email Address: <span class="required">*</span></label>
+
                             </div>
 
                             <div class="col-75">
-                                <input type="password" id="password" placeholder="Enter password..">
-                                <span class="asterisk_input">  </span>
+                                <input type="email" placeholder="Enter email addres.." onchange=" EmailValidation(this)">
+                                <span class="error" id="emailErr">  </span>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-25">
+                                <label for="password">Password: <span class="required">*</span></label>
+                            </div>
+
+                            <div class="col-75">
+                                <input type="password" id="password" placeholder="Enter password.." onchange="PasswordMatch(this, password),PasswordValidation(this)";>
+                                <span class="error" id="passwordErr"></span>
                             </div>
                         </div>
 
                         <div class="row">
                             <div class="col-25">
-                                <label for="NID">National Identity Card: </label>
+                                <label for="NID">National Identity Card: <span class="required">*</span></label>
                             </div>
 
                             <div class="col-75">
-                                <input type="text" id="NID" placeholder="Enter NID..">
-                                <span class="asterisk_input">  </span>
+                                <input type="text" id="NID" placeholder="Enter NID.." onchange="NationalIdValidation(this)";>
+                                <span class="error" id="NIDErr">  </span>
                             </div>
                         </div>
 

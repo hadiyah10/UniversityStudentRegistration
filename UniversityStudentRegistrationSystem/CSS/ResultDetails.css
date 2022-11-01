@@ -1,0 +1,77 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+h2 {
+    text-align: center;
+    color: white;
+}
+
+.container {
+    position: absolute;
+    border-radius: 50px;
+    border: 2px solid white;
+    padding: 0 20px 0 20px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+    background-color: rgba(0,0,0,.5);
+    height: 80%;
+}
+
+.background {
+    height: 100%;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_CZXC_rz2krVrxlC0lrTdISiuWUYDgswyH0AWaatQUnuICYI-26nEU4raOqZtiYxmU-I&usqp=CAU");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(6px);
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    font-size: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}
+
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+#next {
+    background-color: green;
+    padding: 12px 20px;
+    border: 1px solid white;
+    border-radius: 50px;
+    width: 25%;
+    margin-top: 2%;
+    color: white;
+    float: right;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 15px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}

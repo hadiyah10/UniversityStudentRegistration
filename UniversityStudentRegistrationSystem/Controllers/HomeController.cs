@@ -3,21 +3,15 @@
 namespace Student_Registration.Controllers
 {
     public class HomeController : Controller
-
     {
-        public HomeController()
-        { }
-
         public ActionResult HomePage()
         {
-            if (this.Session["user"] != null) {
+            if (this.Session.GetUserId() != null)
+            {
                 return View();
             }
-            else
-            {
-                return RedirectToAction("Login", "Login");
-            }
-           
+
+            return RedirectToAction("Login", "Login");
         }
     }
 }
