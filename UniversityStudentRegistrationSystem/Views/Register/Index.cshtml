@@ -86,8 +86,8 @@
                             </div>
 
                             <div class="col-75">
-                                <input type="text" id="guardian" placeholder="Enter guardian name.." name="guardian"  onchange="NameValidation(this)";>
-                                <span class="error" id="nameErr">  </span>
+                                <input type="text" id="guardian" placeholder="Enter guardian name.." name="guardian"  onchange="GnameValidation(this)";>
+                                <span class="error" id="GnameErr">  </span>
                             </div>
                         </div>
 
@@ -99,7 +99,7 @@
                             </div>
 
                             <div class="col-75">
-                                <input type="email" placeholder="Enter email addres.." onchange=" EmailValidation(this)">
+                                <input type="email" id="email" placeholder="Enter email addres.." onchange=" EmailValidation(this)";>
                                 <span class="error" id="emailErr">  </span>
                             </div>
                         </div>
@@ -111,7 +111,7 @@
                             </div>
 
                             <div class="col-75">
-                                <input type="password" id="password" placeholder="Enter password.." onchange="PasswordMatch(this, password),PasswordValidation(this)";>
+                                <input type="password" id="password" placeholder="Enter password.." onchange="PasswordValidation(this)";>
                                 <span class="error" id="passwordErr"></span>
                             </div>
                         </div>

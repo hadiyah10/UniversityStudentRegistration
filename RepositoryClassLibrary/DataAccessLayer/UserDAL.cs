@@ -12,6 +12,7 @@ using System.Collections;
 using System.Data;
 using System.Security.Cryptography;
 using BCrypt.Net;
+using RepositoryClassLibrary.SQLQueries;
 
 namespace RepositoryClassLibrary.DataAccessLayer
 {
@@ -22,7 +23,7 @@ namespace RepositoryClassLibrary.DataAccessLayer
         public const string GetUserByEmailQuery = @"SELECT UserId FROM Users WHERE Email=@Email";
        
         DatabaseHelper _databaseHelper;
-
+     
         public UserDAL()
         {
             this._databaseHelper = new DatabaseHelper();
@@ -48,8 +49,11 @@ namespace RepositoryClassLibrary.DataAccessLayer
             List<SqlParameter> parameters = new List<SqlParameter>();
             parameters.Add(new SqlParameter("@Email", email));
             DataTable result = _databaseHelper.GetDataWithConditions(GetUserByEmailQuery, parameters);
-            userId = (int)result.Rows[0]["UserId"];
+            if (result.Rows.Count > 0)
+                userId = (int)result.Rows[0]["UserId"];
             return userId;
         }
+
+        
     }
 }

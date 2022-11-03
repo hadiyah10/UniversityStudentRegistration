@@ -16,12 +16,13 @@ namespace RepositoryClassLibrary.Entities
         public DateTime DateOfBirth { get; set; } 
         public string GuardianName { get; set; }
         public int Status { get; set; }
-        public List<Results> ResultId { get; set; }
+        public List<Results> Result { get; set; }
         public string Address { get; set; } 
+        public int TotalScore { get; set; } 
 
         public Students()
         {
-            ResultId = new List<Results>();
+            Result = new List<Results>();
         }
     }
 }

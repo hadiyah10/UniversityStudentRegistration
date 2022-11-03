@@ -1,0 +1,100 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <script type="text/javascript" src="~/Scripts/DisplayResults.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/CSS/ResultDetails.css?v=1">
+    <link rel="stylesheet" type="text/css" href="~/CSS/AdminPanel.css">
+
+
+
+    <style>
+        .background {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_CZXC_rz2krVrxlC0lrTdISiuWUYDgswyH0AWaatQUnuICYI-26nEU4raOqZtiYxmU-I&usqp=CAU");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: blur(6px);
+            z-index: -1;
+        }
+
+        .center {
+            text-align: center;
+            position: fixed;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+        }
+
+            li a, #logout {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                background-color: transparent;
+            }
+
+                li a:hover:not(.active), #logout:hover:not(.active) {
+                    background-color: green;
+                }
+
+        .active {
+            background-color: #04AA6D;
+        }
+
+        #logout {
+            float: right;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background"></div>
+    <div class="container1">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#home">Faculties</a></li>
+            <li><a href="#home">Vacancies</a></li>
+            <li><a href="#">View results</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><button id="logout" onclick="window.location = '@Url.Action("Login", "Login")'">Log Out</button></li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <h2>Result Details</h2>
+        <table id="table" style="width:100%">
+
+            <tr> 
+                <th>Subject</th>
+                <th>Grade</th>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

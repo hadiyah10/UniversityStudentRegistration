@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace RepositoryClassLibrary.DataAccessLayer
 {
-    public interface IResultDAL
+    public interface IRolesDAL
     {
-        bool IsResultCreated(List<Results> listOfResults, int userId);  
-        List<Results> GetAllResults();
+        List<Roles> GetAllRoles(int userId);
     }
 }

@@ -36,7 +36,7 @@ namespace Student_Registration.Controllers
         public JsonResult CreateStudent(Students Student)
         {
             var response = this.StudentBL.CreateStudent(Student);
-            return Json(new { result = response });
+            return Json(response);
 
         }
         public ActionResult ResultDetails()
@@ -45,19 +45,14 @@ namespace Student_Registration.Controllers
 
             if (userId != null)
             {
-                //verify if user has results
-                if (this.StudentBL.GetStudentResultsByUserId(userId.Value) == null)
+                if (this.StudentBL.GetStudentResultsByUserId(userId.Value)==null)
                 {
-                    //redirect to input results
                     return View();
                 }
                 else
                 {
-                    //redirect to display results
-                    return View();
-
+                    return Redirect("/Result/DisplayResults");
                 }
-
             }
             else
             {
@@ -65,12 +60,10 @@ namespace Student_Registration.Controllers
             }
         }
 
-
         [HttpGet]
         public JsonResult GetSubjects()
         {
             var response = this.SubjectBL.GetSubjects();
-
             return Json(new { result = response }, JsonRequestBehavior.AllowGet);
         }
 
@@ -78,7 +71,6 @@ namespace Student_Registration.Controllers
         public JsonResult CreateResult(ResultModel resultModel)
         {
             var response = this.ResultBL.IsResultCreated(resultModel.Results);
-
             return Json(new { result = response });
         }
     }

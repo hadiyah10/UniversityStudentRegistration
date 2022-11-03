@@ -7,62 +7,62 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BCrypt.Net;
+using RepositoryClassLibrary.Helper;
 
 namespace BusinessLogicClassLibrary.BusinessLogic
 {
     public class StudentBL : IStudentBL
     {
         private readonly IStudentDAL StudentDAL;
-        public StudentBL(IStudentDAL studentDAL) 
+        private readonly IValidations Validations;
+        public StudentBL(IStudentDAL studentDAL, IValidations validations) 
         {
             StudentDAL = studentDAL;
+            Validations = validations;
         }
-        public bool CreateStudent(Students student)
+        public Messages CreateStudent(Students student)
         {
             var isStudentCreated = false;
-            //put error message 
-            if (IsNIDUnique(student.NationalId)) {
-                var hashedPassword = BCrypt.Net.BCrypt.HashPassword(student.Password);
-                student.Password = hashedPassword;
-                isStudentCreated = this.StudentDAL.CreateStudent(student);
-            }
-            return isStudentCreated;
+            var validateEmail = Validations.ValidateEmailDuplication(student.Email);
+            if (!validateEmail.Flag)
+                return validateEmail;
+            var validatePhone = Validations.ValidatePhoneDuplication(student.PhoneNumber);
+            if (!validatePhone.Flag)
+                return validatePhone;
+            var validateNationalID = Validations.ValidateNationalIdDuplication(student.NationalId);
+            if (!validateNationalID.Flag)
+                return validateNationalID;
+            var hashedPassword = BCrypt.Net.BCrypt.HashPassword(student.Password);
+            student.Password = hashedPassword;
+            isStudentCreated = this.StudentDAL.CreateStudent(student);
+            return new Messages(isStudentCreated,"");
         }
-        private bool ValidateEmailDuplication(string email)
+        
+        public List<FormattedModel> GetResultInFormat(int id)
         {
-            var student = this.StudentDAL.GetAllStudents().FirstOrDefault(s => s.Email.Equals(email));
-            if (student == null)
+            var formattedResult = new List<FormattedModel>();
+            var allResults = GetStudentResultsByUserId(id);
+            for (int i = 0; i < allResults.Count; i++)
             {
-                return true;
+                var result = new FormattedModel();
+                result.SubjectName = allResults[i].Subject.SubjectName;
+                result.Grade = allResults[i].Grades.ToString();
+                formattedResult.Add(result);
             }
-            return false;
-        } 
-        private bool IsNIDUnique(string nationalId)
+            return formattedResult;
+        }
+        public List<Results> GetStudentResultsByUserId(int id)
         {
-            var student = this.StudentDAL.GetAllStudents();
-               if (student != null)
-            {
-                var stud = student.FirstOrDefault(s => s.NationalId.Equals(nationalId));
-                if (stud == null)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-               return true;
+           return this.StudentDAL.GetStudentResultsByUserId(id);
         }
 
-        private bool ValidatePhoneDuplication(string phoneNumber)
+        public List<Students> GetStudentsSummary()
         {
-            var student = this.StudentDAL.GetAllStudents().FirstOrDefault(s => s.PhoneNumber.Equals(phoneNumber));
-            return student != null;
+            return this.StudentDAL.GetStudentsSummary();
         }
-        public Results GetStudentResultsByUserId(int userId)
-        {
-            return this.StudentDAL.GetStudentResultsByUserId(userId);
+
+        public List<Students> GetTopStudents() { 
+            return this.StudentDAL.GetTopStudents();
         }
     }
 }

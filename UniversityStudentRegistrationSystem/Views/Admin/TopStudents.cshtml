@@ -1,0 +1,43 @@
+﻿
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Rubik:400,700'>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <link rel="stylesheet" type="text/css" href="~/CSS/AdminPanel.css">
+    <script type="text/javascript" src="~/Scripts/TopStudents.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/CSS/Navigation.css">
+
+</head>
+<body>
+
+    <div class="container1">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#home">Faculties</a></li>
+            <li><a href="#home">Vacancies</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <li><button id="StudentSummary" onclick="window.location = '@Url.Action("Panel", "Admin")'">View Student Summary</button></li>
+            <li><button id="logout" onclick="window.location = '@Url.Action("Login", "Login")'">Log Out</button></li>
+        </ul>
+    </div>
+
+
+    <table id="table" style="width:100%">
+        <th id="summary" colspan="5">Top Students</th>
+        <tr>
+            <th>Name</th>
+            <th>Subject</th>
+            <th>Grade</th>
+            <th>Total Points</th>
+            <th>Status</th>
+        </tr>
+    </table>
+</body>
+</html>

@@ -25,7 +25,9 @@
         for (var y = 1; y < 4; y++) {
             var subjectValue = parseInt($('.subjectDetails' + y + ' :selected').val()); 
             var gradeValue = $('.gradeDetails'+y + ' :selected').val(); 
-            const result = { SubjectId: subjectValue, Grade: gradeValue };
+            const result = {
+                Subject: { SubjectId: subjectValue, SubjectName:null }, Grades: gradeValue
+            };
             resultList.push(result);
         }
         CreateResult({ results: resultList }).then((response) => {
@@ -42,6 +44,9 @@
         });   
 
     }); 
+
+
+
 
 });
 

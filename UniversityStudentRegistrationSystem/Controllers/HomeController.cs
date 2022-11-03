@@ -10,7 +10,6 @@ namespace Student_Registration.Controllers
             {
                 return View();
             }
-
             return RedirectToAction("Login", "Login");
         }
     }

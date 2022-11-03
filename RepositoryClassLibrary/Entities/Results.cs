@@ -7,9 +7,10 @@ namespace RepositoryClassLibrary.Entities
 {
     public class Results
     {
-        public int ResultId { get; private set; }
-        public int SubjectId { get; set; } 
-        public char Grade { get; set; }
-       // public int StudentId { get; set; }
+        public int ResultId { get;  set; }
+        public string Grade { get; set; }
+        public Grades Grades { get; set; }
+        public int StudentId { get; set; }
+        public Subjects Subject { get; set; }
     }
 }

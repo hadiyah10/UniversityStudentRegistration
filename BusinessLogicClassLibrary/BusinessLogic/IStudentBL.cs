@@ -1,4 +1,6 @@
 ﻿using RepositoryClassLibrary.Entities;
+using RepositoryClassLibrary.Helper;
+using RepositoryClassLibrary.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +11,12 @@ namespace BusinessLogicClassLibrary.BusinessLogic
 {
     public interface IStudentBL
     {
-        bool CreateStudent(Students Student);
-        Results GetStudentResultsByUserId(int userId);
+        Messages CreateStudent(Students Student);
+
+        List<Results> GetStudentResultsByUserId(int id);
+        List<FormattedModel> GetResultInFormat(int id);
+        List<Students> GetStudentsSummary();
+
+        List<Students> GetTopStudents();
     }
 }

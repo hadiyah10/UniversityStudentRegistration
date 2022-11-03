@@ -42,6 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccessLayer\IRolesDAL.cs" />
+    <Compile Include="DataAccessLayer\RolesDAL.cs" />
+    <Compile Include="Helper\Messages.cs" />
+    <Compile Include="Model\FormattedModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataAccessLayer\IResultDAL.cs" />
     <Compile Include="DataAccessLayer\IStudentDAL.cs" />

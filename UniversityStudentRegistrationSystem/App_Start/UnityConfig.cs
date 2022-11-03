@@ -25,6 +25,9 @@ namespace UniversityStudentRegistrationSystem
             container.RegisterType<IUserDAL, UserDAL>();
             container.RegisterType<IResultBL, ResultBL>();
             container.RegisterType<IResultDAL, ResultDAL>();
+            container.RegisterType<IValidations, Validations>();
+            container.RegisterType<IRolesDAL, RolesDAL>();
+            container.RegisterType<IRolesBL, RolesBL>();
 
             //container.RegisterType<ISqlDatabaseService, SqlDatabaseService>();
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));

@@ -1,6 +1,4 @@
-﻿toastr.options.timeOut = 100000;
-
-function EmailValidation(element) { 
+﻿function EmailValidation(element) { 
     var emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (element.value.length == 0) {
         toastr.error("You must enter your email.");
@@ -9,7 +7,7 @@ function EmailValidation(element) {
         toastr.error("Incorrect email length");
         $("#emailErr").html("Length must be between 8 and 50");
     }
-    else if (!emailRegex.test(element)) {
+    else if (!emailRegex.test(element.value)) {
         toastr.error("Email is in an incorrect format");
     }
     else {
@@ -34,9 +32,9 @@ function FnameValidation(element) {
     if (element.value.length == 0) {
         toastr.error("You must enter your first name");
     }
-    else if (element.value.length < 2 || element.value.length > 100) {
+    else if (element.value.length < 5 || element.value.length > 100) {
         toastr.error("Incorrect first name length");
-        $("#fnameErr").html("First name length should be between 2 and 100");
+        $("#fnameErr").html("First name length should be between 5 and 100");
     }
     else {
         $("#fnameErr").html("");
@@ -47,12 +45,25 @@ function SnameValidation(element) {
     if (element.value.length == 0) {
         toastr.error("You must enter your surname");
     }
-    else if (element.value.length < 2 || element.value.length > 100) {
+    else if (element.value.length < 5 || element.value.length > 100) {
         toastr.error("Incorrect  surname length");
-        $("#snameErr").html(" Surname length should be between 2 and 100");
+        $("#snameErr").html(" Surname length should be between 5 and 100");
     }
     else {
         $("#snameErr").html("");
+    }
+}
+
+function GnameValidation(element) {
+    if (element.value.length == 0) {
+        toastr.error("You must enter your guardian name");
+    }
+    else if (element.value.length < 5 || element.value.length > 100) {
+        toastr.error("Incorrect  guardian name length");
+        $("#GnameErr").html(" Guardian name length should be between 5 and 100");
+    }
+    else {
+        $("#GnameErr").html("");
     }
 }
 
@@ -79,9 +90,9 @@ function AddressValidation(element) {
     if (element.value.length == 0) {
         toastr.error("You must enter your Address");
     } 
-    else if (element.value.length < 2 || element.value.length > 100) {
+    else if (element.value.length < 5 || element.value.length > 100) {
         toastr.error("Incorrect Address length"); 
-        $("#AddressErr").html("Address length should be between 2 and 100");
+        $("#AddressErr").html("Address length should be between 5 and 100");
     } 
     else {
         $("#AddressErr").html("");
@@ -104,3 +115,10 @@ function PhoneValidation(element) {
         $("#PhoneErr").html("");
     }
 } 
+
+function DateValidation(element) {
+    if (elment.value.length == 0) {
+        toastr.error("You must enter your date of birth.");
+    } 
+}
+     

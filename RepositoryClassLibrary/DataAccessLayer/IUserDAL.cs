@@ -13,5 +13,6 @@ namespace RepositoryClassLibrary.DataAccessLayer
     {
         bool IsUserAuthenticated(LoginModel loginModel);
         int GetUserIdByEmailId(String email);
+      
     }
 }

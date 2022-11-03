@@ -1,13 +1,11 @@
 ﻿using RepositoryClassLibrary.Entities;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BusinessLogicClassLibrary.BusinessLogic { 
+namespace BusinessLogicClassLibrary.BusinessLogic
+{
     public interface IResultBL
     {
         bool IsResultCreated(List<Results> results);
+        List<Results> GetAllResults();
     }
 }

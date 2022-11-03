@@ -10,11 +10,19 @@ namespace RepositoryClassLibrary.DataAccessLayer
     public interface IStudentDAL
     {
         bool CreateStudent(Students student);
-        Results GetStudentResultsByUserId(int id);
+
+        List<Results> GetStudentResultsByUserId(int id);
+
         List<Students> GetAllStudents();
-        Students GetStudent(string email);
-        void UpdateStatus(Students student, int Status);  
-        List<Students> GetTopFifteenStudents();
-     
+
+        List<Students> GetStudentsSummary();
+
+        List<Students> GetTopStudents();
+
+        void UpdateStatus(Students student, int Status);
+
+        Students GetStudentBy(string queryParameter, object queryValue);
+
+
     }
 }

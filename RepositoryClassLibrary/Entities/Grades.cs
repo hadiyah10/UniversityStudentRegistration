@@ -6,10 +6,13 @@ using System.Web;
 
 namespace RepositoryClassLibrary.Entities
 {
-    public class Grades
+    public enum Grades
     {
-        public int GradeId { get; private set; } 
-        public char GradeName { get; set; }
-        public int GradeScore { get; set; }
+      A = 10,
+      B = 8,
+      C = 6,
+      D = 4, 
+      E = 2,
+      F = 0
     }  
 }

@@ -16,7 +16,8 @@ function signIn() {
     sendData(authObj).then((response) => {
         if (response.result) {
             toastr.success("Authentication Succeed. Redirecting to relevent page.....");
-            setTimeout(redirect, 2000);
+            
+            setTimeout(redirect(response.url), 2000);
         }
         else {
             toastr.error('Incorrect Credentials');
@@ -72,6 +73,6 @@ function sendData(userCredential) {
     request.send(userCredential);
 } */
 
-function redirect() {
-    window.location.href = "/Home/HomePage";
+function redirect(url) {
+    window.location.href = url;
 }
