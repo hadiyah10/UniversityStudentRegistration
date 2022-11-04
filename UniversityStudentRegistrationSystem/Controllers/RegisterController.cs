@@ -17,7 +17,6 @@ namespace Student_Registration.Controllers
         private ISubjectBL SubjectBL;
         private IResultBL ResultBL;
 
-
         public RegisterController() { }
         public RegisterController(IStudentBL student, ISubjectBL subject, IResultBL resultBL)
         {
@@ -31,13 +30,11 @@ namespace Student_Registration.Controllers
             return View();
         }
 
-
         [HttpPost]
         public JsonResult CreateStudent(Students Student)
         {
             var response = this.StudentBL.CreateStudent(Student);
             return Json(response);
-
         }
         public ActionResult ResultDetails()
         {

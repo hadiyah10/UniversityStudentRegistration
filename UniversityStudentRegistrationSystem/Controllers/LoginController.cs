@@ -32,6 +32,7 @@ namespace Student_Registration.Controllers
         public static void SignOut(this HttpSessionStateBase session)
         {
             session["userId"] = false;
+            session["roles"]=false;
         }
     }
     public class LoginController : Controller 

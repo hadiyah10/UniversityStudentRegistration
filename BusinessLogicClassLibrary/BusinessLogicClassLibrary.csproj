@@ -44,14 +44,12 @@
   <ItemGroup>
     <Compile Include="BusinessLogic\IResultBL.cs" />
     <Compile Include="BusinessLogic\IRolesBL.cs" />
-    <Compile Include="BusinessLogic\ISessionService.cs" />
     <Compile Include="BusinessLogic\IStudentBL.cs" />
     <Compile Include="BusinessLogic\ISubjectBL.cs" />
     <Compile Include="BusinessLogic\IUserBL.cs" />
     <Compile Include="BusinessLogic\IValidations.cs" />
     <Compile Include="BusinessLogic\ResultBL.cs" />
     <Compile Include="BusinessLogic\RolesBL.cs" />
-    <Compile Include="BusinessLogic\SessionService.cs" />
     <Compile Include="BusinessLogic\StudentBL.cs" />
     <Compile Include="BusinessLogic\SubjectBL.cs" />
     <Compile Include="BusinessLogic\UserBL.cs" />

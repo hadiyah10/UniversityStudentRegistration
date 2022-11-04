@@ -6,17 +6,14 @@
     });
 });
 
-
 function signIn() {
-    var email = $("#email").val(); // read email address input
-    var password = $("#password").val(); // read password input
-    // create object to map LoginModel
+    var email = $("#email").val();
+    var password = $("#password").val();
     var authObj = { Email: email, Password: password };
 
     sendData(authObj).then((response) => {
         if (response.result) {
-            toastr.success("Authentication Succeed. Redirecting to relevent page.....");
-            
+            toastr.success("Authentication Succeed. Redirecting to relevent page....."); 
             setTimeout(redirect(response.url), 2000);
         }
         else {
@@ -46,9 +43,7 @@ function sendData(userCredential) {
     });
 }
 
-
 //Instead of using jquery ajax 
-
 /* function postData(userCredential) {
     var url = "/Login/Authenticate";
     var request = mew XMLHttpRequest(); 

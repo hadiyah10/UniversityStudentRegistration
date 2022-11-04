@@ -127,7 +127,6 @@ namespace RepositoryClassLibrary.DataAccessLayer
 
             foreach(Students Student in StudentList)
             {           
-                   
                 Student.Result = ResultList.FindAll(result => result.StudentId.Equals(Student.StudentId));
             }
             return StudentList;

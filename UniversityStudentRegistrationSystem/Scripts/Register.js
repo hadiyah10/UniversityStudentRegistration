@@ -18,19 +18,16 @@ function register() {
     var NID = $("#NID").val();  
     var date = $("#date").val();
 
-    // create object to map LoginModel
     var studentObj = {
         FirstName: name, Surname: surname, Address: address, PhoneNumber: phone, GuardianName: guardian,
         Email: email, Password : password, NationalId: NID, DateOfBirth : date
     };
-
 
     sendData(studentObj).then((response) => {
         console.log(response);
         if (response.Flag) {
             toastr.success("Authentication Succeed. Redirecting to relevent page.....");
             setTimeout(redirect, 3000);
-      
         }
         else {
             toastr.error(response.Message);

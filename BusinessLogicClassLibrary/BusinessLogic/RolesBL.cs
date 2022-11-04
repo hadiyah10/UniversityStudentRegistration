@@ -15,7 +15,6 @@ namespace BusinessLogicClassLibrary.BusinessLogic
         {
             RolesDAL = rolesDAL;
         }
-
         public List<Roles> GetUserRoles(int userId)
         {
             return this.RolesDAL.GetAllRoles(userId);

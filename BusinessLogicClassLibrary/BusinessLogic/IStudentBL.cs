@@ -12,11 +12,9 @@ namespace BusinessLogicClassLibrary.BusinessLogic
     public interface IStudentBL
     {
         Messages CreateStudent(Students Student);
-
         List<Results> GetStudentResultsByUserId(int id);
         List<FormattedModel> GetResultInFormat(int id);
         List<Students> GetStudentsSummary();
-
         List<Students> GetTopStudents();
     }
 }

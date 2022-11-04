@@ -18,7 +18,6 @@ namespace BusinessLogicClassLibrary.BusinessLogic
             StudentDAL = studentDAL;
             UserDAL = userDAL;
         }
-
         public Messages ValidateNationalIdDuplication(string nationalId)
         {
             if (string.IsNullOrEmpty(nationalId))

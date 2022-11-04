@@ -32,7 +32,8 @@
         }
         CreateResult({ results: resultList }).then((response) => {
             if (response.result) {
-               toastr.success('Result Created Successfully')
+                toastr.success('Result Created Successfully');
+                window.location.href("/Result/DisplayResults");
             }
             else {
                 toastr.error('Unable to create result');
